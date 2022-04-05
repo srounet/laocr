@@ -1,6 +1,6 @@
 # Laocr
 
-**Laocr** an ocr library made for Lost Ark.
+**Laocr**, an ocr library made for Lost Ark.
 
 ```python
 from laocr.jobs import fishing
@@ -16,7 +16,7 @@ while True:
 
 ```
 
-## Basic fishing exemple:
+## Basic fishing example:
 
 [![Laocr fishing](https://i.ibb.co/zJKJqjt/cbgpgc.jpg)](https://streamable.com/e/cbgpgc)
 
@@ -36,10 +36,10 @@ As of this early stage you can still install laocr in develop mode with pip:
 $ python -m pip -e .
 ```
 
-Laocr will **be soon available on PyPI** (as of this early stage it is not available yet on pypy):
+Laocr will **be soon available on PyPI** (not available on pypy until basic features are implemented):
 
 ```console
 $ python -m pip install laocr
 ```
 
-Laocr supports Python 3.7+ on windows only.
+laocr supports Python 3.7+ on windows only.
