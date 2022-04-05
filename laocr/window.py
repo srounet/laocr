@@ -14,8 +14,14 @@ from laocr.resources import BUTTON_EXIT
 def find_in_window(source_image: numpy.ndarray, threshold: float = 0.9, screenshot: Optional[numpy.ndarray] = None) -> Optional[Tuple]:
     """
     Given a source image and a default threshold will search within currently displayed image a potential match.
-    If matches are found; the first one coordinates will be returned as a tuple with x and y corresponding to top left
-    corner.
+
+    Args:
+        source_image (numpy.ndarray): An image to search within captured screen or given screenshot
+        threshold (float): The accepted quality to consider matches (default to .9)
+        screenshot (numpy.ndarray): Optionally an image to search from. This is useful if you don t want to search the entire screen
+
+    Returns:
+        coordinates: A tuple with first match coordinates (top left coordinates of full screen or relative to given ss)
     """
     if screenshot is None:
         screenshot = capture()
@@ -32,7 +38,11 @@ def click_at(x: int, y: int, move_to: bool = False):
     """
     Will left click at given coordinates (x/y), optionally will 'move' the cursor in to the corresponding location
     instead of directly replacing coordinates (more like a human behavior).
-    If move_to is being used, then a random speed between .2 and .5 will be use.
+
+    Args:
+        x (int): An integer representing the X coordinate to click at
+        y (int): An integer representing the Y coordinate to click at
+        move_to (bool): Humanize the cursor shift from actual position (default false)
     """
     if move_to:
         pyautogui.moveTo(x, y, random.uniform(.1, .5))
@@ -44,6 +54,9 @@ def click_at(x: int, y: int, move_to: bool = False):
 def press(key: str):
     """
     Will press a given key with a random threshold between .05 and .1 (human behavior)
+
+    Args:
+        key (str): a character representing key to press
     """
     pyautogui.keyDown(key)
     time.sleep(random.uniform(0.05, 0.1))
