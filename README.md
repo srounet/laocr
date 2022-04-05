@@ -3,13 +3,24 @@
 **Laocr** an ocr library made for Lost Ark.
 
 ```python
->>> from laocr.jobs import fishing
->>>
->>> fishing.throw('e')
->>> while fishing.is_fishing():
->>>     if fishing.is_bite_event_displayed():
->>>         fishing.catch('e')
+from laocr.jobs import fishing
+import time
+
+
+while True:
+    fishing.throw('e')
+    while fishing.is_fishing():
+        if fishing.is_bite_event_displayed():
+            fishing.catch('e')
+    time.sleep(3)
+
 ```
+
+## Basic fishing exemple:
+
+[![Laocr fishing](https://i.ibb.co/zJKJqjt/cbgpgc.jpg)](https://streamable.com/e/cbgpgc)
+
+## Notes on laocr development
 
 This is an experimental project, mainly focused on learning openCV through interfacing with Lost Ark MMO Action RPG.
 
